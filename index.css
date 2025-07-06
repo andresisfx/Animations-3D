@@ -1,0 +1,177 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: black;
+    font-size: 2rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+
+.header{
+    background-color: rgb(39, 1, 1);
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    max-width: 100%;
+    box-shadow: rgb(255, 255, 255) 0px 0px 5px inset,black 1px 1px 10px;
+}
+
+.header__title{
+    font-size: 2.2rem;
+    margin-left: 1rem;
+    text-shadow: white 0.1rem 0.1rem 0.3rem;
+}
+
+.nav__list{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    background-color:rgb(39, 1, 1) ;
+    width: 100%;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    
+}
+.nav__item{
+    color: aliceblue;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+
+.hamburger__icon{
+    height: 5px;
+    width: 25px;
+    margin: 5px;
+    display: block;
+    background-color: aliceblue;
+    margin-right: 1rem;
+}
+
+.menu__active{
+    display: flex;
+}
+
+/**scrool smoth*/
+
+.colorBlock{
+    min-height: 70vh;
+    margin-top: 10rem;
+    background: linear-gradient(to top,rgb(39, 1, 1),rgb(97, 1, 1) );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
+.content{
+    opacity: 0;
+    width: 70%;
+
+}
+
+.fade-Up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(229, 233, 233,0.5);
+    opacity: 1;
+    transition: all 0.8s ease;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+
+}
+
+#resizeElement{
+    width: 30rem;
+    color: blanchedalmond;
+    border: solid 1px grey;
+    white-space: nowrap;
+    padding: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    resize: horizontal;
+}
+
+/**animation 3D*/
+
+#wrapper{
+    perspective: 1000px;/** la propiedad perspectiva permite que los elementos hijos se muestren en 3D, osea da una sensacion deprofundidad para que no se vean planos*/
+    width: 400px;
+    height: 400px;
+    margin: 50pc auto;
+}
+
+.cubo{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d; /* * por defecto los navegadores aplican las transformaciones en 2D, esta propiedad permite que los hijos se transformen en 3D */
+    transform: rotateX(0deg) rotateY(-38deg);
+    transition: 0.6s ease;
+}
+.cubo:hover{
+  transform: rotateY(125deg) rotateX(155deg);
+}
+.cubo div{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+}
+.cubo div:nth-child(1){
+ transform: translateZ(75px);
+ background: greenyellow;
+}
