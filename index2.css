@@ -1,0 +1,116 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: black;
+    font-size: 2rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+.data-container{
+    display: grid;
+    grid-template-columns: repeat(3 , minmax(200px,1fr));
+    gap: 5rem;
+    height: 30rem;
+    width: 20rem;
+    perspective: 1000px;
+    margin: 2rem;
+}
+.card{
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+    transform: rotateY(180deg);
+    height: 30rem;
+    width: 20rem;
+    
+    
+}
+.card:hover{
+    transform: rotateY(0deg);
+    transition: transform 1s ease ;
+    cursor: pointer;
+    
+}
+.card-back{
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0;
+    /* opacity: 0.6; */
+   
+
+}
+ 
+.card-back img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.card-front{
+    
+    transform: translateZ(1px);
+    background: linear-gradient(45deg, rgba(255, 193, 24, 0.99999), rgba(128, 87, 0, 0.8));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+.card-front h4{
+   color: rgb(253, 249, 249);
+   font-size: 2.2rem;
+   margin: 0 auto;
+   text-align: center;
+}
+.card-front p{
+   color: rgb(89, 17, 224);
+   font-size: 2.2rem;
+   margin: 0 auto;
+   text-align: center;
+}

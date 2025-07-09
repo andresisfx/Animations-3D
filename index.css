@@ -145,33 +145,58 @@ h3 {
 }
 
 /**animation 3D*/
-
 #wrapper{
-    perspective: 1000px;/** la propiedad perspectiva permite que los elementos hijos se muestren en 3D, osea da una sensacion deprofundidad para que no se vean planos*/
+    perspective: 1000px;
     width: 400px;
     height: 400px;
-    margin: 50pc auto;
+    margin: 50px auto;
 }
 
 .cubo{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform-style: preserve-3d; /* * por defecto los navegadores aplican las transformaciones en 2D, esta propiedad permite que los hijos se transformen en 3D */
-    transform: rotateX(0deg) rotateY(-38deg);
-    transition: 0.6s ease;
-}
-.cubo:hover{
-  transform: rotateY(125deg) rotateX(155deg);
-}
-.cubo div{
-    position: relative;
     width: 150px;
     height: 150px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
+    transform-style: preserve-3d;
+    transform:rotateX(0) rotateY(-39deg);
+    transition: transform 2s ease-in-out;
 }
+.cubo:hover{
+    transform: rotateX(280deg) rotateY(155deg);
+    
+}
+.cubo div{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    
+
+}
+
 .cubo div:nth-child(1){
- transform: translateZ(75px);
- background: greenyellow;
+  background-color: aquamarine;
+  transform: translateZ(75px)
+}
+.cubo div:nth-child(2){
+   background-color: blueviolet;
+   transform: translateZ(-75px) rotateY(180deg);
+}
+.cubo div:nth-child(3){
+   background-color: rgb(43, 76, 226);
+   transform: rotateY(90deg) translateZ(-75px) rotateY(180deg);
+}
+.cubo div:nth-child(4){
+   background-color: rgb(226, 183, 43);
+   transform: rotateY(-90deg) translateZ(-75px) rotateY(180deg);
+}
+.cubo div:nth-child(5){
+   background-color: rgb(126, 255, 94);
+   transform: rotateX(90deg) translateZ(75px) rotateX(180deg) rotateY(180deg);
+}
+.cubo div:nth-child(6){
+   background-color: rgb(226, 43, 67);
+   transform: rotateX(90deg) translateZ(-75px) rotateY(180deg);
 }

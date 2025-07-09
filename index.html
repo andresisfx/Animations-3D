@@ -24,7 +24,7 @@
     <section class="colorBlock">
         <h1>3D Animation</h1>
         <div id="wrapper">
-            <div class="cubo">
+            <div class="cubo">  
                 <div class="cubo__face cubo__face--front">Front</div>
                 <div class="cubo__face cubo__face--back">Back</div>
                 <div class="cubo__face cubo__face--left">Left</div>
@@ -82,3 +82,57 @@
     </script>
 </body>
 </html>
+
+ <!-- #wrapper{
+    perspective: 1000px;/** la propiedad perspectiva permite que los elementos hijos se muestren en 3D, osea da una sensacion deprofundidad para que no se vean planos*/
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.cubo{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d; /* * por defecto los navegadores aplican las transformaciones en 2D, esta propiedad permite que los hijos se transformen en 3D */
+    transform: rotateX(0deg) rotateY(-38deg);
+    transition: 3s ease;
+}
+.cubo:hover{
+  transform: rotateY(270deg) rotateX(95deg);
+}
+.cubo div{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7 ;
+}
+.cubo div:nth-child(1){
+ transform: translateZ(75px);
+ background: greenyellow;
+}
+.cubo div:nth-child(2){
+ transform: rotateY(180deg) translateZ(75px);
+ background: red;
+}
+.cubo div:nth-child(3){
+ transform: rotateY(270deg) translateZ(75px);
+ background: rgb(0, 238, 255);
+}
+.cubo div:nth-child(4){
+ transform: rotateY(-90deg) translateZ(-75px) rotateY(180deg);
+ background: rgb(255, 187, 0);
+}
+.cubo div:nth-child(5){
+ transform:  rotateX(90deg) translateZ(75px)  ;
+ background: rgb(111, 0, 255);
+}
+.cubo div:nth-child(6){
+ transform:  rotateX(-90deg)  translateZ(75px) rotateX(180deg) rotateY(180deg );
+ background: rgb(225, 0, 255);
+}  -->
