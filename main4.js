@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded',function(){
+
 
     const navbar=document.querySelector('.nav__list');
     const menuBtn=document.querySelector('.hamburger')
@@ -61,10 +61,18 @@ document.addEventListener('DOMContentLoaded',function(){
     const totalImages= carouselImage.children.length;
     const slide_image_time= 6000;
     let index=0
-    console.log("carrouselimage here",carouselImage)
+  
     const changeImage=()=>{
           index=(index +1) % totalImages
-          carouselImage.style.transform=`translateX(-${totalImages[index]*100})`
+          console.log("index here",index)
+          carouselImage.style.transform=`translateX(-${index*100}%)`
     }
     let interval= setInterval(changeImage,slide_image_time);
-})
+
+    carouselImage.addEventListener('mouseenter',function(){
+        clearInterval(interval)
+    })
+    carouselImage.addEventListener('mouseleave',function(){
+         interval= setInterval(changeImage,slide_image_time);
+    })
+
